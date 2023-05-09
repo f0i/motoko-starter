@@ -1,6 +1,6 @@
 import Float "mo:base/Float";
 
-actor Calculator {
+actor class Calculator() {
   // Step 1 -  Define a mutable variable called `counter`.
   stable var counter : Float = 0;
 
@@ -23,10 +23,9 @@ actor Calculator {
   };
 
   // Step 5 - Implement div
-  public func div(x : Float) : async ?Float {
-    if (x == 0) return null;
+  public func div(x : Float) : async Float {
     counter /= x;
-    ?counter;
+    counter;
   };
 
   // Step 6 - Implement reset
@@ -47,9 +46,7 @@ actor Calculator {
 
   // Step 9 - Implement sqrt
   public func sqrt() : async Float {
-    counter := Float.sqrt(counter);
-    counter;
-
+    Float.sqrt(counter);
   };
 
   // Step 10 - Implement floor
